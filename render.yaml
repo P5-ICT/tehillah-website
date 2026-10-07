@@ -1,0 +1,35 @@
+# Render Blueprint: creates the API and the website as two free web services.
+# Free services sleep after ~15 minutes without visitors, and the API's saved
+# enquiries and news (data/db.json) are wiped on every restart. Demo use only.
+services:
+  - type: web
+    name: tehillah-api
+    runtime: node
+    plan: free
+    buildCommand: npm ci --include=dev && npm run build -w backend
+    startCommand: npm run start -w backend
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: ADMIN_TOKEN
+        generateValue: true
+      - key: TRUST_PROXY
+        value: "1"
+
+  - type: web
+    name: tehillah-web
+    runtime: node
+    plan: free
+    buildCommand: npm ci --include=dev && npm run build -w frontend
+    startCommand: npm exec -w frontend -- next start -p $PORT
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      # The API's public address, e.g. https://tehillah-api.onrender.com
+      # It is saved into the build, so redeploy the website after changing it.
+      - key: API_URL
+        sync: false
+      # The website's public address, e.g. https://tehillah-web.onrender.com
+      - key: NEXT_PUBLIC_SITE_URL
+        sync: false
