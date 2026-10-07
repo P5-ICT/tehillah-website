@@ -241,8 +241,9 @@ function Enquiries({ token, onAuthLost }: { token: string; onAuthLost: () => voi
   );
 }
 
-type Draft = { id: string | null; title: string; summary: string; body: string; imageUrl: string; published: boolean };
-const emptyDraft: Draft = { id: null, title: "", summary: "", body: "", imageUrl: "", published: false };
+type Draft = { id: string | null; title: string; summary: string; body: string; imageUrl: string; date: string; published: boolean };
+// date is "YYYY-MM-DD" from the date picker. Empty means today for a new story.
+const emptyDraft: Draft = { id: null, title: "", summary: "", body: "", imageUrl: "", date: "", published: false };
 
 function News({ token, onAuthLost }: { token: string; onAuthLost: () => void }) {
   const { items, error, loading, reload, setError } = useLoader<NewsPost>(token, "/news", onAuthLost);
@@ -261,6 +262,8 @@ function News({ token, onAuthLost }: { token: string; onAuthLost: () => void }) 
         body: draft.body,
         imageUrl: draft.imageUrl,
         published: draft.published,
+        // Midday UTC, so the chosen date never shifts by a day when shown in local time.
+        publishedAt: draft.date ? new Date(`${draft.date}T12:00:00Z`).toISOString() : undefined,
       };
       if (draft.id) {
         await api(token, `/news/${draft.id}`, { method: "PUT", body: JSON.stringify(payload) });
@@ -330,6 +333,20 @@ function News({ token, onAuthLost }: { token: string; onAuthLost: () => void }) 
             Use a photo that is already in the website&apos;s images folder (for example /images/kitchen.jpg), or a full https:// link.
           </p>
         </div>
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="news-date" className="text-[15px] font-bold">Date of the story (optional)</label>
+          <input
+            id="news-date"
+            type="date"
+            value={draft.date}
+            onChange={(e) => setDraft({ ...draft, date: e.target.value })}
+            className={`${field} max-w-xs`}
+            aria-describedby="news-date-help"
+          />
+          <p id="news-date-help" className="text-sm text-ink-soft">
+            Leave empty for today. Set it for older stories so they show the right date and order.
+          </p>
+        </div>
         <label className="flex min-h-11 items-center gap-3 text-base font-bold">
           <input type="checkbox" checked={draft.published} onChange={(e) => setDraft({ ...draft, published: e.target.checked })} className="size-5" />
           Published (shown on the website)
@@ -364,7 +381,7 @@ function News({ token, onAuthLost }: { token: string; onAuthLost: () => void }) 
             <p className="text-base text-ink-soft">{post.summary}</p>
           </div>
           <div className="flex flex-wrap gap-2">
-            <button type="button" className={smallButton} onClick={() => setDraft({ id: post.id, title: post.title, summary: post.summary, body: post.body, imageUrl: post.imageUrl ?? "", published: post.published })}>
+            <button type="button" className={smallButton} onClick={() => setDraft({ id: post.id, title: post.title, summary: post.summary, body: post.body, imageUrl: post.imageUrl ?? "", date: post.publishedAt.slice(0, 10), published: post.published })}>
               Edit
             </button>
             <button type="button" className={smallButton} onClick={() => togglePublished(post)}>
