@@ -1,0 +1,113 @@
+import type { Metadata } from "next";
+import { ButtonLink } from "@/components/ButtonLink";
+import { Photo } from "@/components/Photo";
+import { Section, SectionTitle } from "@/components/Section";
+import { awards, mission, objectives, site, values, vision } from "@/content/site";
+
+export const metadata: Metadata = {
+  title: "About us",
+  description: "Tehillah's vision, mission, values and the recognition our director has received for community work.",
+};
+
+export default function AboutPage() {
+  return (
+    <>
+      <section className="grid bg-charcoal-800 md:grid-cols-2">
+        <div className="flex items-center justify-end px-6 py-16 md:py-20 md:pl-20 md:pr-16">
+          <div className="flex max-w-[560px] flex-col gap-5">
+            <div className="text-sm font-bold tracking-[0.16em] text-brand">ABOUT US</div>
+            <h1 className="text-4xl font-bold leading-[1.1] text-white md:text-[52px]">{site.tagline}</h1>
+            <p className="text-xl leading-relaxed text-[#e8e8e8]">
+              Since 1996, Tehillah has walked alongside the poor, the vulnerable and those with special needs in Elsies
+              River, helping people become self-reliant.
+            </p>
+          </div>
+        </div>
+        <Photo
+          src="/images/smiling-woman.jpg"
+          alt="A smiling woman sitting in front of a red brick wall"
+          className="min-h-[300px] md:min-h-[420px]"
+          sizes="(min-width: 768px) 50vw, 100vw"
+          position="30% 40%"
+          priority
+        />
+      </section>
+
+      <Section>
+        <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-[32px] font-bold leading-[1.15] md:text-4xl">Our vision</h2>
+            <p className="text-xl leading-relaxed">{vision}</p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <h2 className="text-[32px] font-bold leading-[1.15] md:text-4xl">Our mission</h2>
+            <ul className="flex list-disc flex-col gap-3 pl-6 text-[17px] leading-relaxed text-ink-soft">
+              {mission.map((line) => (
+                <li key={line}>{line}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      <Section tone="cream">
+        <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+          <div className="flex flex-col gap-5">
+            <SectionTitle title="What we are working towards" />
+            <ul className="flex list-disc flex-col gap-2.5 pl-6 text-[17px] leading-relaxed text-ink-soft">
+              {objectives.map((line) => (
+                <li key={line}>{line}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex flex-col gap-5">
+            <SectionTitle title="What we stand for" />
+            <ul className="flex flex-wrap gap-2.5" aria-label="Our values">
+              {values.map((value) => (
+                <li key={value} className="rounded-full bg-white px-4 py-2 text-[15px] font-semibold">
+                  {value}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="grid items-start gap-10 md:grid-cols-[1fr_380px] md:gap-16">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-[32px] font-bold leading-[1.15] md:text-4xl">Recognised for our work</h2>
+            <p className="text-[17px] leading-relaxed text-ink-soft">
+              Our director, Sr Magda Kleyn, has received many awards for her work in the community.
+            </p>
+            <ul className="flex flex-col gap-2.5 text-[17px] leading-snug">
+              {awards.map((award) => (
+                <li key={award.year + award.name}>
+                  <strong className="mr-3 text-brand-dark">{award.year}</strong>
+                  {award.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex flex-col gap-2.5 rounded-xl border border-line bg-cream p-8">
+            <div className="text-[44px] font-bold leading-none text-brand-dark">Level 1</div>
+            <div className="text-[22px] font-bold">B-BBEE company</div>
+            <p className="text-base leading-relaxed text-ink-soft">
+              We hold ourselves to the highest ethical standards, both financially and in how we serve people.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section tone="dark" className="py-14 md:py-16">
+        <div className="flex flex-col items-start gap-5">
+          <h2 className="text-[28px] font-bold md:text-4xl">See the work up close</h2>
+          <p className="max-w-[640px] text-lg leading-relaxed text-[#dadada]">
+            Our work is organised into four clusters: Social Services, Education, Health and Youth.
+          </p>
+          <ButtonLink href="/work">Explore our work</ButtonLink>
+        </div>
+      </Section>
+    </>
+  );
+}

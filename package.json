@@ -1,0 +1,23 @@
+{
+  "name": "tehillah-website",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tehillah Community Collaborative website: Next.js frontend and Node.js (Express) backend",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "dev": "concurrently -n api,web -c yellow,cyan \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w backend && npm run build -w frontend",
+    "start": "concurrently -n api,web -c yellow,cyan \"npm run start -w backend\" \"npm run start -w frontend\"",
+    "typecheck": "npm run typecheck -w backend && npm run typecheck -w frontend",
+    "test": "npm run test -w backend"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.0"
+  }
+}

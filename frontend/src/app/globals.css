@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cabin Variable", system-ui, sans-serif;
+
+  /* Tehillah brand: charcoal grey and orange */
+  --color-charcoal-950: #1e1e20;
+  --color-charcoal-900: #2a2a2c;
+  --color-charcoal-800: #3b3b3d;
+  --color-charcoal-700: #4c4c50;
+  --color-brand: #f58220;
+  --color-brand-light: #ff9a3c;
+  /* Darker orange for text on white (the bright orange is too light to read) */
+  --color-brand-dark: #b35200;
+  --color-cream: #f7f5f2;
+  --color-sand: #f1ece4;
+  --color-line: #e3ded6;
+  --color-ink-soft: #444448;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-charcoal-900);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
