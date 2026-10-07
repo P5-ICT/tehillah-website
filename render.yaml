@@ -1,15 +1,22 @@
-# Render Blueprint: creates the API and the website as two free web services.
-# Free services sleep after ~15 minutes without visitors, and the API's saved
-# enquiries and news (data/db.json) are wiped on every restart. Demo use only.
+# Render Blueprint: creates the API and the website as two web services.
+# The API is on a paid plan with a disk, so it stays awake and keeps enquiries
+# and news between restarts. The website is free and sleeps after ~15 minutes
+# without visitors.
 services:
   - type: web
     name: tehillah-api
     runtime: node
-    plan: free
+    plan: starter
     buildCommand: npm ci --include=dev && npm run build -w backend
     startCommand: npm run start -w backend
     healthCheckPath: /api/health
+    disk:
+      name: tehillah-data
+      mountPath: /var/data
+      sizeGB: 1
     envVars:
+      - key: DATA_FILE
+        value: /var/data/db.json
       - key: NODE_VERSION
         value: "22"
       - key: ADMIN_TOKEN
