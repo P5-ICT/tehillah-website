@@ -1,14 +1,14 @@
-# Render Blueprint: creates the API and the website as two web services.
-# The API is on a paid plan with a disk, so it stays awake and keeps enquiries
-# and news between restarts. The website is free and sleeps after ~15 minutes
-# without visitors.
+# Render Blueprint: one paid web service runs both the website and the API
+# (see start-all.mjs). The website answers on Render's PORT and forwards
+# /api/... to the API on localhost:4000. The disk keeps enquiries and news
+# between restarts, and the paid plan means the service never sleeps.
 services:
   - type: web
     name: tehillah-api
     runtime: node
     plan: starter
-    buildCommand: npm ci --include=dev && npm run build -w backend
-    startCommand: npm run start -w backend
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: node start-all.mjs
     healthCheckPath: /api/health
     disk:
       name: tehillah-data
@@ -23,20 +23,9 @@ services:
         generateValue: true
       - key: TRUST_PROXY
         value: "1"
-
-  - type: web
-    name: tehillah-web
-    runtime: node
-    plan: free
-    buildCommand: npm ci --include=dev && npm run build -w frontend
-    startCommand: npm exec -w frontend -- next start -p $PORT
-    envVars:
-      - key: NODE_VERSION
-        value: "22"
-      # The API's public address, e.g. https://tehillah-api.onrender.com
-      # It is saved into the build, so redeploy the website after changing it.
+      # Where the website finds the API. Both run on the same server.
       - key: API_URL
-        sync: false
-      # The website's public address, e.g. https://tehillah-web.onrender.com
+        value: http://localhost:4000
+      # The public address of the website (used for the sitemap and sharing links)
       - key: NEXT_PUBLIC_SITE_URL
-        sync: false
+        value: https://tehillah-api.onrender.com
