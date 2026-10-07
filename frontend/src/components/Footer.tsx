@@ -27,6 +27,9 @@ export function Footer() {
             <a href={contact.phoneHref} className="text-white no-underline hover:text-brand">
               {contact.phone}
             </a>
+            <a href={contact.person.phoneHref} className="text-white no-underline hover:text-brand">
+              {contact.person.name}: {contact.person.phone}
+            </a>
             {contact.email ? (
               <a href={`mailto:${contact.email}`} className="text-white no-underline hover:text-brand">
                 {contact.email}

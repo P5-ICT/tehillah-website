@@ -29,6 +29,16 @@ export default function ContactPage() {
                 {contact.phone}
               </a>
             </div>
+            <div>
+              <Eyebrow>{contact.person.name.toUpperCase()}</Eyebrow>
+              <a href={contact.person.phoneHref} className="text-charcoal-900 no-underline hover:text-brand-dark">
+                {contact.person.phone}
+              </a>
+              {" · "}
+              <a href={contact.person.whatsappHref} className="font-bold text-brand-dark">
+                WhatsApp
+              </a>
+            </div>
             {contact.email ? (
               <div>
                 <Eyebrow>EMAIL</Eyebrow>

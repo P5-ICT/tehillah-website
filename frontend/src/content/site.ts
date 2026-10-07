@@ -12,8 +12,15 @@ export const site = {
     address: "196 16th Avenue, Leonsdale, Elsies River, Cape Town",
     phone: "021 933 0990",
     phoneHref: "tel:+27219330990",
-    // Add the real email address here when the client sends it. The site shows it automatically.
-    email: null as string | null,
+    // Set to null to hide the email address everywhere on the site.
+    email: "tehillahcc@polka.co.za" as string | null,
+    // Second contact: a person people can call or WhatsApp directly.
+    person: {
+      name: "Samantha Yorke",
+      phone: "081 550 1015",
+      phoneHref: "tel:+27815501015",
+      whatsappHref: "https://wa.me/27815501015",
+    },
     hours: "A social worker is available Monday to Thursday, 8am to 4pm.",
   },
 };

@@ -230,6 +230,24 @@ export default async function HomePage() {
                   {site.contact.phone}
                 </a>
               </div>
+              <div>
+                <Eyebrow>{site.contact.person.name.toUpperCase()}</Eyebrow>
+                <a href={site.contact.person.phoneHref} className="text-charcoal-900 no-underline hover:text-brand-dark">
+                  {site.contact.person.phone}
+                </a>
+                {" · "}
+                <a href={site.contact.person.whatsappHref} className="font-bold text-brand-dark">
+                  WhatsApp
+                </a>
+              </div>
+              {site.contact.email ? (
+                <div>
+                  <Eyebrow>EMAIL</Eyebrow>
+                  <a href={`mailto:${site.contact.email}`} className="text-charcoal-900 no-underline hover:text-brand-dark">
+                    {site.contact.email}
+                  </a>
+                </div>
+              ) : null}
             </div>
             <div className="flex flex-wrap gap-4">
               <ButtonLink href={site.contact.phoneHref}>Call us</ButtonLink>
