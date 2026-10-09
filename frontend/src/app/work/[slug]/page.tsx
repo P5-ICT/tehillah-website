@@ -37,7 +37,9 @@ export default async function ClusterPage({ params }: Props) {
             </Link>
             <h1 className="text-4xl font-bold leading-[1.1] text-white md:text-[52px]">{cluster.title}</h1>
             <p className="text-xl leading-relaxed text-[#e8e8e8]">{cluster.intro}</p>
-            <div className="text-lg font-bold text-brand">{cluster.beneficiaries} beneficiaries</div>
+            {cluster.beneficiaries ? (
+              <div className="text-lg font-bold text-brand">{cluster.beneficiaries} beneficiaries</div>
+            ) : null}
           </div>
         </div>
         <Photo

@@ -1,4 +1,5 @@
-// All the words and facts on the website live here, taken from the Tehillah brochure.
+// All the words and facts on the website live here, taken from the Tehillah brochure and
+// the 2025 Community Safe Haven proposal (newer facts from the proposal win).
 // To change the text on a page, change it here. Dates and news come from the backend instead.
 
 export const site = {
@@ -7,11 +8,17 @@ export const site = {
   tagline: "Embracing change since 1996",
   purpose:
     "Transforming communities and building a self-reliant society that can govern their own lives and families effectively.",
+  motto: "A home for all, and a place where everybody is somebody.",
+  npoNumber: "015-972 NPO",
   domain: "www.tehillah.za.org",
   contact: {
-    address: "196 16th Avenue, Leonsdale, Elsies River, Cape Town",
+    address: "196 16th Avenue, Leonsdale, Elsies River, Cape Town, 7490",
+    postal: "P.O. Box 28, Elsies River, 7490",
     phone: "021 933 0990",
     phoneHref: "tel:+27219330990",
+    mobile: "072 302 9638",
+    mobileHref: "tel:+27723029638",
+    fax: "086 522 9264",
     // Set to null to hide the email address everywhere on the site.
     email: "tehillahcc@polka.co.za" as string | null,
     // Second contact: a person people can call or WhatsApp directly.
@@ -55,7 +62,8 @@ export type Section = {
 export type Cluster = {
   slug: string;
   title: string;
-  beneficiaries: string;
+  // Leave out when we have no published number for this cluster.
+  beneficiaries?: string;
   summary: string;
   intro: string;
   image: string;
@@ -71,7 +79,7 @@ export const clusters: Cluster[] = [
     beneficiaries: "1,779",
     summary: "A safe haven, rehabilitation, daily meals and social work support for the people who need it most.",
     intro:
-      "Social Services is our biggest cluster. It brings together a safe haven, a rehabilitation centre, a feeding scheme, social work, a church and a group of businesses that create jobs.",
+      "Social Services is our biggest cluster. It brings together a safe haven, a 24-hour care programme, a rehabilitation centre, a feeding scheme, support groups and social work.",
     image: "/images/house-of-magda.jpg",
     imageAlt: "The House of Magda safe haven building with its teal roof",
     sections: [
@@ -80,16 +88,17 @@ export const clusters: Cluster[] = [
         label: "SAFE HAVEN",
         heading: "House of Magda",
         paragraphs: [
-          "We have used the old Avonwood Primary School building for more than 10 years as a temporary safe haven. House of Magda has run for 20 years and was the first project of Tehillah. It has never been funded by the government.",
-          "Referrals come from the Department of Social Development, nearby hospitals, trauma rooms at police stations, churches and by word of mouth.",
+          "House of Magda was the first project of Tehillah. About 20 years ago, many people in our community were too young for an old-age home, but too frail or vulnerable to live on their own or on the streets. We took over the abandoned Avonwood School building and turned it into a place of safety and care.",
+          "Today we give 24-hour shelter, care and protection to about 150 residents who have been abandoned, neglected or left without family support. Referrals come from the Department of Social Development, the Department of Health, public hospitals, clinics, the South African Police Service, faith-based organisations and community members. Many residents have no family to care for them, and the facility is now full.",
         ],
         points: [
-          "A haven for homeless, destitute, abused, mentally ill, frail, neglected and rejected women and children, and for the elderly",
-          "Room for 110 adults and 15 children",
-          "A bathroom in every room, for the comfort of our elderly and frail clients",
+          "Safe accommodation, daily meals and personal care",
+          "Medical monitoring and healthcare support",
+          "Social work, and emotional and psychosocial support",
+          "Family tracing and reunification where possible",
+          "A team of professional nurses, social workers, caregivers, administrative staff and volunteers",
           "Emily Frail Care: two rooms for 10 frail women and 10 frail men, with a 24-hour nursing service",
-          "Right now we care for 75 homeless women, 15 children and 20 men, and the need is growing",
-          "Our own 24-hour access control keeps clients safe in an area affected by gangs",
+          "Our own 24-hour access control keeps residents safe in an area affected by gangs",
         ],
         image: "/images/magda-rooms.jpg",
         imageAlt: "Two women sitting on beds in a room at House of Magda",
@@ -103,7 +112,7 @@ export const clusters: Cluster[] = [
           "We admit men and women aged 18 and over who struggle with drug and alcohol abuse and are willing to be rehabilitated. We also care for mothers with children. The centre has 35 bed spaces, a recreation room, consultation rooms, a dining room, a swimming pool and a garden.",
         ],
         points: [
-          "In-patient: an 8-week programme modelled on the internationally recognised 12 Steps Program, supported by a senior social worker, a social auxiliary worker, a life skills specialist, a spiritual counsellor and co-ordinators",
+          "In-patient: a 12-week programme modelled on the internationally recognised 12 Steps Program, supported by a senior social worker, a social auxiliary worker, a life skills specialist, a spiritual counsellor and co-ordinators",
           "After the programme we keep an open-door policy, and offer accommodation and a work opportunity within Tehillah",
           "All religions are welcome. Christianity is part of the spiritual side of the programme and we have our own church. Muslim clients can attend the nearest mosque",
           "Aftercare (the Matrix Programme): 16 weeks, twice a week from 10am to 1pm, with weekly drug tests, individual and group sessions, and random home visits to help families reunite",
@@ -148,6 +157,26 @@ export const clusters: Cluster[] = [
         imageAlt: "The courtyard at House of Magda with residents outside",
       },
       {
+        id: "care-and-support-groups",
+        label: "CARE AND SUPPORT",
+        heading: "24-hour care and support groups",
+        paragraphs: [
+          "Our 24-hour care programme supports frail older people who are homeless, too young for a place in an old-age home, or whose families cannot care for them properly. We believe everyone deserves to be treated with dignity and respect.",
+          "We also run support groups, so that people facing the same challenges can meet, share and help each other through them.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "spiritual",
+    title: "Spiritual",
+    summary: "Tehillah Ministries Extreme Oasis: a welcoming church, a soup kitchen and a funeral scheme for the community.",
+    intro:
+      "Our Spiritual cluster is a welcoming space for everyone looking for spiritual guidance and support, at the heart of which is our church, Tehillah Ministries Extreme Oasis.",
+    image: "/images/church.jpg",
+    imageAlt: "A full congregation inside the Tehillah church hall",
+    sections: [
+      {
         id: "church",
         label: "CHURCH",
         heading: "Tehillah Ministries Extreme Oasis",
@@ -163,6 +192,26 @@ export const clusters: Cluster[] = [
         ],
         image: "/images/church.jpg",
         imageAlt: "A full congregation inside the Tehillah church hall",
+      },
+    ],
+  },
+  {
+    slug: "skills-development",
+    title: "Labour & Skills",
+    summary: "Training and jobs that help people provide for themselves and their families.",
+    intro:
+      "Unemployment is one of the biggest problems in our community. Our Labour and Skills Development cluster trains people and creates work, so that they can become economic participants and support their families.",
+    image: "/images/bakery.jpg",
+    imageAlt: "Fresh bread on the racks at Mother K's Bakery",
+    sections: [
+      {
+        id: "training",
+        label: "TRAINING",
+        heading: "Skills training",
+        paragraphs: [
+          "We run training programmes that give people the skills they need to find work. After training, many people are employed within Tehillah or placed in other local businesses and organisations. We also partner with local businesses to create jobs and grow the local economy.",
+        ],
+        points: ["Home-based carer training", "Gardening training", "Security training"],
       },
       {
         id: "tehillah-yadah",
@@ -189,7 +238,7 @@ export const clusters: Cluster[] = [
     slug: "education",
     title: "Education",
     beneficiaries: "145",
-    summary: "Early childhood development at the Tehillah Future Kids crèche, caring for 95 young children.",
+    summary: "Early childhood development at the Tehillah Future Kids crèche, caring for about 100 young children.",
     intro:
       "Education is where we invest in the youngest people in our community. We believe the most impact is made at this stage of a child's life.",
     image: "/images/children-reading.jpg",
@@ -201,7 +250,7 @@ export const clusters: Cluster[] = [
         heading: "Tehillah Future Kids crèche",
         paragraphs: [
           "The aim is to build, develop and strengthen young people in line with their stage of development, and so strengthen the Circle of Courage.",
-          "We care for 95 children in the crèche, which is on the premises of our main offices. It is aimed at children who receive the child support grant and whose families cannot afford an expensive crèche. The children range in age from 10 days to 5½ years old, and are protected under the Child Care Act.",
+          "We care for about 100 children in the crèche, which is on the premises of our main offices. It is aimed at children who receive the child support grant and whose families cannot afford an expensive crèche. The children range in age from 10 days to 5½ years old, and are protected under the Child Care Act.",
         ],
         points: [
           "We hold on to the slogan “Knowledge is power”, and we strive to live it",
@@ -308,7 +357,7 @@ export const featured = [
   {
     label: "SAFE HAVEN",
     title: "House of Magda",
-    body: "A safe place in the old Avonwood Primary School building for people who are homeless, abused, frail or rejected. There is room for 110 adults and 15 children, with 24-hour access control for everyone's safety.",
+    body: "A safe place in the old Avonwood School building, with 24-hour shelter and care for about 150 people who are frail, abandoned or have nowhere else to go.",
     image: "/images/house-of-magda.jpg",
     imageAlt: "The House of Magda building in the old Avonwood Primary School",
     href: "/work/social-services#house-of-magda",
@@ -317,7 +366,7 @@ export const featured = [
   {
     label: "REHABILITATION",
     title: "Spread Your Wings",
-    body: "An 8-week in-patient programme for adults struggling with drug and alcohol abuse, followed by aftercare and school awareness work. There are 35 bed spaces, including a place for mothers with children.",
+    body: "A 12-week in-patient programme for adults struggling with drug and alcohol abuse, followed by aftercare and school awareness work. There are 35 bed spaces, including a place for mothers with children.",
     image: "/images/rehab-meal.jpg",
     imageAlt: "Three men sharing a meal together at the rehabilitation centre",
     href: "/work/social-services#spread-your-wings",
@@ -338,7 +387,7 @@ export const featured = [
     body: "Sustainable projects that create jobs: Mother K's Bakery and Coffee Shop, a beauty salon, a sewing group, a gardening project, an access control company and a community radio station.",
     image: "/images/cafe.jpg",
     imageAlt: "The dining room at Mother K's Bakery and Coffee Shop",
-    href: "/work/social-services#tehillah-yadah",
+    href: "/work/skills-development#tehillah-yadah",
     position: "50% 50%",
   },
 ];
@@ -351,12 +400,26 @@ export const gallery = [
 ];
 
 export const vision =
-  "Embracing the chance to transform communities and build a self-reliant society that can govern their own lives and family effectively.";
+  "Embracing the chance to transform communities and build a self-reliant society that can govern their own lives and family effectively. A community where every child grows up safe, supported and able to reach their full potential.";
 
 export const mission = [
   "To build a social safety net for the poor, the vulnerable and those with special needs, in a way that helps them grow.",
   "To create an environment that empowers families and those who are socially shunned and rejected.",
   "To stay committed to the holistic process of individual self-empowerment.",
+  "To provide a safe, nurturing and therapeutic environment for at-risk children removed from unsafe homes, promoting healing, stability and long-term wellbeing.",
+];
+
+// Leadership and board, from the 2025 Community Safe Haven proposal.
+export const team = [
+  { name: "Sr Magda Kleyn", role: "Founder and CEO" },
+  { name: "Mr Christopher Isaacs", role: "Chairperson of the Board" },
+  { name: "Mr Henry Davids", role: "Deputy CEO" },
+  { name: "Mrs Monique Davids", role: "Secretary of the Board" },
+  { name: "Mrs Connelley Soetwater", role: "Senior Social Worker" },
+  { name: "Mrs Chantal Kleyn", role: "Educare Principal" },
+  { name: "Mrs Samantha Yorke", role: "Finance Manager" },
+  { name: "Mr Carl Appollis", role: "Board Member" },
+  { name: "Ms Jamie Louw", role: "Board Member" },
 ];
 
 export const objectives = [
@@ -397,7 +460,7 @@ export const awards = [
 export const founder = {
   name: "Sr Magda Kleyn",
   fullName: "Magdalena Kleyn",
-  role: "Founder and director",
+  role: "Founder and CEO",
   intro:
     "Sister Magda Kleyn founded Tehillah in 1996. Her own life taught her what poverty, abuse and starting again feel like, and that is why Tehillah meets people with understanding instead of judgement.",
   story: [

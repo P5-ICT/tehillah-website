@@ -28,6 +28,11 @@ export default function ContactPage() {
               <a href={contact.phoneHref} className="text-charcoal-900 no-underline hover:text-brand-dark">
                 {contact.phone}
               </a>
+              {" (office) · "}
+              <a href={contact.mobileHref} className="text-charcoal-900 no-underline hover:text-brand-dark">
+                {contact.mobile}
+              </a>
+              {" (mobile)"}
             </div>
             <div>
               <Eyebrow>{contact.person.name.toUpperCase()}</Eyebrow>
@@ -47,6 +52,12 @@ export default function ContactPage() {
                 </a>
               </div>
             ) : null}
+            <div>
+              <Eyebrow>POST AND FAX</Eyebrow>
+              {contact.postal}
+              <br />
+              Fax: {contact.fax}
+            </div>
           </div>
           <div>
             <ButtonLink href={contact.phoneHref}>Call us</ButtonLink>

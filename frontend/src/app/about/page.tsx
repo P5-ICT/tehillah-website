@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Photo } from "@/components/Photo";
 import { Section, SectionTitle } from "@/components/Section";
-import { awards, founder, mission, objectives, site, values, vision } from "@/content/site";
+import { awards, founder, mission, objectives, site, team, values, vision } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "About us",
@@ -22,6 +22,7 @@ export default function AboutPage() {
               Since 1996, Tehillah has walked alongside the poor, the vulnerable and those with special needs in Elsies
               River, helping people become self-reliant.
             </p>
+            <p className="text-xl font-semibold italic leading-relaxed text-brand">&ldquo;{site.motto}&rdquo;</p>
           </div>
         </div>
         <Photo
@@ -57,6 +58,20 @@ export default function AboutPage() {
           <h2 className="text-[28px] font-bold md:text-4xl">{founder.name}</h2>
           <p className="text-lg leading-relaxed text-[#dadada]">{founder.intro}</p>
           <ButtonLink href="/about/our-founder">Read her story</ButtonLink>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="flex flex-col gap-9">
+          <SectionTitle title="Our leadership" intro="The management team and board who lead Tehillah." />
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {team.map((person) => (
+              <li key={person.name} className="rounded-xl border border-line bg-white p-6">
+                <div className="text-xl font-bold">{person.name}</div>
+                <div className="pt-1 text-base text-ink-soft">{person.role}</div>
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
 
@@ -108,6 +123,10 @@ export default function AboutPage() {
             <p className="text-base leading-relaxed text-ink-soft">
               We hold ourselves to the highest ethical standards, both financially and in how we serve people.
             </p>
+            <p className="text-base leading-relaxed text-ink-soft">
+              Our annual financial statements are independently audited, with no irregular audit findings. Registered
+              non-profit organisation {site.npoNumber}.
+            </p>
           </div>
         </div>
       </Section>
@@ -116,7 +135,8 @@ export default function AboutPage() {
         <div className="flex flex-col items-start gap-5">
           <h2 className="text-[28px] font-bold md:text-4xl">See the work up close</h2>
           <p className="max-w-[640px] text-lg leading-relaxed text-[#dadada]">
-            Our work is organised into four clusters: Social Services, Education, Health and Youth.
+            Our work is organised into six clusters: Social Services, Spiritual, Labour &amp; Skills, Education, Health and
+            Youth.
           </p>
           <ButtonLink href="/work">Explore our work</ButtonLink>
         </div>

@@ -58,10 +58,10 @@ export default async function HomePage() {
       <Section>
         <div className="flex flex-col gap-11">
           <SectionTitle
-            title="Four clusters, one purpose"
+            title="Six clusters, one purpose"
             intro="We asked the community what it needs, and shaped our work around the answers."
           />
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {clusters.map((cluster) => (
               <ClusterCard key={cluster.slug} cluster={cluster} />
             ))}
@@ -231,6 +231,10 @@ export default async function HomePage() {
                 <Eyebrow>CALL</Eyebrow>
                 <a href={site.contact.phoneHref} className="text-charcoal-900 no-underline hover:text-brand-dark">
                   {site.contact.phone}
+                </a>
+                {" · "}
+                <a href={site.contact.mobileHref} className="text-charcoal-900 no-underline hover:text-brand-dark">
+                  {site.contact.mobile}
                 </a>
               </div>
               <div>

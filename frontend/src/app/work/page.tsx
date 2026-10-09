@@ -5,7 +5,7 @@ import { clusters } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Our work",
-  description: "Tehillah's four clusters: Social Services, Education, Health and Youth.",
+  description: "Tehillah's six clusters: Social Services, Spiritual, Labour & Skills, Education, Health and Youth.",
 };
 
 export default function WorkPage() {
@@ -15,9 +15,9 @@ export default function WorkPage() {
         <SectionTitle
           as="h1"
           title="Our work"
-          intro="We did a needs analysis within the community and, after assessing what people need, divided our approach into four clusters."
+          intro="We did a needs analysis within the community and, after assessing what people need, divided our approach into six clusters."
         />
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {clusters.map((cluster) => (
             <ClusterCard key={cluster.slug} cluster={cluster} />
           ))}

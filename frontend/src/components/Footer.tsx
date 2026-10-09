@@ -27,6 +27,9 @@ export function Footer() {
             <a href={contact.phoneHref} className="text-white no-underline hover:text-brand">
               {contact.phone}
             </a>
+            <a href={contact.mobileHref} className="text-white no-underline hover:text-brand">
+              {contact.mobile}
+            </a>
             <a href={contact.person.phoneHref} className="text-white no-underline hover:text-brand">
               {contact.person.name}: {contact.person.phone}
             </a>
@@ -39,7 +42,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col justify-between gap-2 border-t border-charcoal-700 pt-5 text-sm text-[#c4c4c8] md:flex-row">
-          <span>{site.domain}</span>
+          <span>Registered NPO {site.npoNumber}</span>
           <span>
             © {new Date().getFullYear()} {site.name}
           </span>
