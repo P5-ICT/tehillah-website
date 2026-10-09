@@ -53,11 +53,14 @@ export default function AboutPage() {
       </Section>
 
       <Section tone="dark" className="py-14 md:py-16">
-        <div className="flex max-w-[760px] flex-col items-start gap-5">
-          <div className="text-sm font-bold tracking-[0.16em] text-brand">OUR FOUNDER</div>
-          <h2 className="text-[28px] font-bold md:text-4xl">{founder.name}</h2>
-          <p className="text-lg leading-relaxed text-[#dadada]">{founder.intro}</p>
-          <ButtonLink href="/about/our-founder">Read her story</ButtonLink>
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-center">
+          <Photo src={founder.photo} alt={founder.name} className="h-[300px] w-[182px] shrink-0 rounded-xl" sizes="182px" />
+          <div className="flex max-w-[640px] flex-col items-start gap-5">
+            <div className="text-sm font-bold tracking-[0.16em] text-brand">OUR FOUNDER</div>
+            <h2 className="text-[28px] font-bold md:text-4xl">{founder.name}</h2>
+            <p className="text-lg leading-relaxed text-[#dadada]">{founder.intro}</p>
+            <ButtonLink href="/about/our-founder">Read her story</ButtonLink>
+          </div>
         </div>
       </Section>
 
@@ -66,9 +69,12 @@ export default function AboutPage() {
           <SectionTitle title="Our leadership" intro="The management team and board who lead Tehillah." />
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((person) => (
-              <li key={person.name} className="rounded-xl border border-line bg-white p-6">
-                <div className="text-xl font-bold">{person.name}</div>
-                <div className="pt-1 text-base text-ink-soft">{person.role}</div>
+              <li key={person.name} className="flex items-center gap-4 rounded-xl border border-line bg-white p-5">
+                <Photo src={person.photo} alt={person.name} className="size-[76px] shrink-0 rounded-full" sizes="76px" />
+                <div>
+                  <div className="text-xl font-bold">{person.name}</div>
+                  <div className="pt-1 text-base text-ink-soft">{person.role}</div>
+                </div>
               </li>
             ))}
           </ul>

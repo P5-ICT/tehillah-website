@@ -31,7 +31,15 @@ export default function FounderPage() {
 
       <Section>
         <div className="mx-auto flex max-w-[760px] flex-col gap-6">
-          <SectionTitle title="Her story" />
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end">
+            <Photo src={founder.photo} alt={founder.name} className="h-[300px] w-[182px] shrink-0 rounded-xl" sizes="182px" />
+            <div className="flex flex-col gap-1">
+              <SectionTitle title="Her story" />
+              <p className="text-lg font-semibold text-brand-dark">
+                {founder.name}, {founder.role}
+              </p>
+            </div>
+          </div>
           {founder.story.map((paragraph) => (
             <p key={paragraph.slice(0, 40)} className="text-[18px] leading-relaxed text-ink-soft">
               {paragraph}

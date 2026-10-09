@@ -410,16 +410,17 @@ export const mission = [
 ];
 
 // Leadership and board, from the 2025 Community Safe Haven proposal.
+// Photos were cut from screenshots of the proposal; replace them with originals when available.
 export const team = [
-  { name: "Sr Magda Kleyn", role: "Founder and CEO" },
-  { name: "Mr Christopher Isaacs", role: "Chairperson of the Board" },
-  { name: "Mr Henry Davids", role: "Deputy CEO" },
-  { name: "Mrs Monique Davids", role: "Secretary of the Board" },
-  { name: "Mrs Connelley Soetwater", role: "Senior Social Worker" },
-  { name: "Mrs Chantal Kleyn", role: "Educare Principal" },
-  { name: "Mrs Samantha Yorke", role: "Finance Manager" },
-  { name: "Mr Carl Appollis", role: "Board Member" },
-  { name: "Ms Jamie Louw", role: "Board Member" },
+  { name: "Sr Magda Kleyn", role: "Founder and CEO", photo: "/images/team/magda-kleyn.jpg" },
+  { name: "Mr Christopher Isaacs", role: "Chairperson of the Board", photo: "/images/team/christopher-isaacs.jpg" },
+  { name: "Mr Henry Davids", role: "Deputy CEO", photo: "/images/team/henry-davids.jpg" },
+  { name: "Mrs Monique Davids", role: "Secretary of the Board", photo: "/images/team/monique-davids.jpg" },
+  { name: "Mrs Connelley Soetwater", role: "Senior Social Worker", photo: "/images/team/connelley-soetwater.jpg" },
+  { name: "Mrs Chantal Kleyn", role: "Educare Principal", photo: "/images/team/chantal-kleyn.jpg" },
+  { name: "Mrs Samantha Yorke", role: "Finance Manager", photo: "/images/team/samantha-yorke.jpg" },
+  { name: "Mr Carl Appollis", role: "Board Member", photo: "/images/team/carl-appollis.jpg" },
+  { name: "Ms Jamie Louw", role: "Board Member", photo: "/images/team/jamie-louw.jpg" },
 ];
 
 export const objectives = [
@@ -461,6 +462,7 @@ export const founder = {
   name: "Sr Magda Kleyn",
   fullName: "Magdalena Kleyn",
   role: "Founder and CEO",
+  photo: "/images/magda-kleyn.jpg",
   intro:
     "Sister Magda Kleyn founded Tehillah in 1996. Her own life taught her what poverty, abuse and starting again feel like, and that is why Tehillah meets people with understanding instead of judgement.",
   story: [
