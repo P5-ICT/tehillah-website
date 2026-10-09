@@ -382,12 +382,56 @@ export const values = [
   "Respect",
 ];
 
+// From Sr Magda Kleyn's own biography.
 export const awards = [
-  { year: "2004", name: "Premier's Award of the Western Cape" },
-  { year: "2005", name: "Community Woman of the Year" },
-  { year: "2005", name: "Lions Club Woman of the Year" },
-  { year: "2009", name: "Sowetan/Old Mutual Community Builder of the Year (winner)" },
+  { year: "2004", name: "Premier's Award for commitment and extensive work in the community" },
+  { year: "2005", name: "Lions Club International Woman of the Year" },
+  { year: "2005", name: "Sowetan/Old Mutual/SABC Award" },
+  { year: "2005", name: "Semi-finalist, National Woman of the Year and Community Builder of the Year" },
+  { year: "2006", name: "Sowetan/Old Mutual/SABC Award (Adult Category)" },
+  { year: "2008", name: "Nominated, Shoprite/Checkers Woman of the Year" },
 ];
+
+// Our founder's story, shortened from her own biography for the public website.
+// Private family details (children's families, grandchildren) are left out on purpose.
+export const founder = {
+  name: "Sr Magda Kleyn",
+  fullName: "Magdalena Kleyn",
+  role: "Founder and director",
+  intro:
+    "Sister Magda Kleyn founded Tehillah in 1996. Her own life taught her what poverty, abuse and starting again feel like, and that is why Tehillah meets people with understanding instead of judgement.",
+  story: [
+    "Magdalena Kleyn, born Louw, was born on 10 January 1957 in Petrusville, a small town in the Northern Cape, and grew up in Elsies River. People know her as Magda, or Sister Kleyn.",
+    "Her mother, Emily Louw, shaped her life. Emily prayed every morning at 5am for her children, the community, the church and the government. For the last 20 years of her life she served Elsies River as a councillor and Commissioner of Oaths, and she was often called out at midnight to pray for the sick or help a family in crisis. \"Our house was a home for all,\" Magda remembers, \"a haven to the hopeless, a shelter to the homeless and a place of prayer for the broken hearted.\"",
+    "Magda was the only daughter among seven surviving children. After her father left, the family lived in a small zinc house with one bed and paraffin lamps, getting by on a social grant and casual work. Once, walking home from an ironing job, they were attacked by dogs, and her mother was badly bitten while shielding her. Through it all, her mother taught the children to be grateful and to keep their faith. \"It was never important where we were,\" Magda says, \"but where we were heading.\"",
+    "Magda passed Grade 10 but had to leave school because there was no money to continue. At 16 she started work as an assistant nurse at Red Cross Children's Hospital. A year later she was chosen for a training programme at Tygerberg Hospital and became a staff nurse, and the family moved to a better home in Leonsdale, Elsies River.",
+    "Her own marriage became abusive, as her mother's had been. After six years she left, with four children aged between two and six and almost no maintenance. She went through severe depression, and with her mother's support and her faith in God she rebuilt her life. \"Failing does not make you a failure,\" she says. \"Just as hot water brings out the flavour in a tea bag, my failures brought out my full potential.\"",
+    "Those years are why she understands the people Tehillah serves: abused women, single mothers, children who live through divorce or have only coffee and bread to eat, and families going in and out of the maintenance courts.",
+    "After nine years working in Social Services, she resigned so that she could speak up and act freely. In 1996 she founded Tehillah Community Collaborative, five years after first sharing the vision in a job interview. She calls it her biggest achievement.",
+    "Today she is a Chief Professional Nurse and a mother of six, and all of her children have gone on to do well in fields from law and business to ministry, psychology and social work. Her dream is to see Tehillah duplicated across South Africa.",
+  ],
+  message: "Never give up!",
+  qualifications: [
+    "Chief Professional Nurse",
+    "Midwife",
+    "Primary Healthcare Practitioner",
+    "Community Healthcare Practitioner, with certificates in HIV/AIDS/STI and as a Sexual Health Practitioner",
+    "Master Trainer, Certified Community Health Worker Skills Development",
+    "Skills Development Specialist",
+    "Basic Qualification in Child Care",
+    "NPO Management Capacity Building",
+    "Commissioner of Oaths",
+    "Marriage Officer and counsellor",
+  ],
+  roles: [
+    "Appointed as a Human Rights Activist by the Human Rights Commissioner of the Western Cape",
+    "Ordained as an Apostle, and founder of Tehillah Ministries Extreme Oasis",
+    "Ward Committee Member, Sub-Council Ward 4 (2012)",
+    "Board Member, Karl Bremer Hospital (2021)",
+    "Certificate of Recognition from the Department of Health for dedication, commitment and quality service",
+    "Certificate of Gratitude for outstanding service in the community",
+  ],
+};
 
 export const involvement = [
   {

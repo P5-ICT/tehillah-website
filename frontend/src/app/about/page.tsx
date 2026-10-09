@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Photo } from "@/components/Photo";
 import { Section, SectionTitle } from "@/components/Section";
-import { awards, mission, objectives, site, values, vision } from "@/content/site";
+import { awards, founder, mission, objectives, site, values, vision } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "About us",
@@ -50,6 +51,15 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      <Section tone="dark" className="py-14 md:py-16">
+        <div className="flex max-w-[760px] flex-col items-start gap-5">
+          <div className="text-sm font-bold tracking-[0.16em] text-brand">OUR FOUNDER</div>
+          <h2 className="text-[28px] font-bold md:text-4xl">{founder.name}</h2>
+          <p className="text-lg leading-relaxed text-[#dadada]">{founder.intro}</p>
+          <ButtonLink href="/about/our-founder">Read her story</ButtonLink>
+        </div>
+      </Section>
+
       <Section tone="cream">
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
           <div className="flex flex-col gap-5">
@@ -88,6 +98,9 @@ export default function AboutPage() {
                 </li>
               ))}
             </ul>
+            <Link href="/about/our-founder" className="py-2 text-base font-bold text-brand-dark underline">
+              Read Sr Magda Kleyn&apos;s story
+            </Link>
           </div>
           <div className="flex flex-col gap-2.5 rounded-xl border border-line bg-cream p-8">
             <div className="text-[44px] font-bold leading-none text-brand-dark">Level 1</div>

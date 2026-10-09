@@ -202,6 +202,9 @@ export default async function HomePage() {
                 </li>
               ))}
             </ul>
+            <Link href="/about/our-founder" className="py-2 text-base font-bold text-brand-dark underline">
+              Read Sr Magda Kleyn&apos;s story
+            </Link>
           </div>
           <div className="flex flex-col gap-2.5 rounded-xl border border-line bg-white p-8">
             <div className="text-[44px] font-bold leading-none text-brand-dark">Level 1</div>
