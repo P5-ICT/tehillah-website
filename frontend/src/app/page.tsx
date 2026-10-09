@@ -7,6 +7,10 @@ import { Eyebrow, Section, SectionTitle } from "@/components/Section";
 import { awards, clusters, featured, gallery, involvement, site, stats, values, vision } from "@/content/site";
 import { getNews } from "@/lib/api";
 
+// Render on each request. A page built ahead of time would be built while the API is
+// not running yet, and would show no news until it next refreshed.
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const news = await getNews(3);
 

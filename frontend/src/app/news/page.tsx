@@ -4,6 +4,9 @@ import { Section, SectionTitle } from "@/components/Section";
 import { site } from "@/content/site";
 import { getNews } from "@/lib/api";
 
+// Render on each request, so news never goes missing after a deploy (see app/page.tsx).
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "News",
   description: "News and updates from Tehillah Community Collaborative.",
