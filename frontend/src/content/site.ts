@@ -36,6 +36,7 @@ export const nav = [
   { href: "/about", label: "About" },
   { href: "/work", label: "Our Work" },
   { href: "/news", label: "News" },
+  { href: "/photos", label: "Photos" },
   { href: "/get-involved", label: "Get Involved" },
   { href: "/contact", label: "Contact" },
 ];
@@ -397,6 +398,54 @@ export const gallery = [
   { image: "/images/salon.jpg", alt: "A hairdresser styling a client's hair at Tehillah's beauty salon", caption: "Tehillah's beauty salon", position: "50% 30%" },
   { image: "/images/bakery.jpg", alt: "Fresh bread on the racks at Mother K's Bakery", caption: "Mother K's Bakery" },
   { image: "/images/youth-masks.jpg", alt: "Young performers in white masks and gloves", caption: "Youth drama and performance" },
+];
+
+// The Photos page. Photos showing residents in bed, patient records or young children's
+// faces are left out on purpose, to protect people's privacy and dignity.
+export const photoAlbums = [
+  {
+    title: "House of Magda",
+    intro: "Inside our safe haven, where we care for about 150 residents.",
+    photos: [
+      { image: "/images/gallery/safe-haven-bedroom.jpg", alt: "A bedroom with neatly made beds and purple curtains", caption: "A bedroom at the safe haven" },
+      { image: "/images/gallery/frail-care-room.jpg", alt: "Hospital beds with bright bedding in a frail care room", caption: "Frail care room" },
+      { image: "/images/gallery/dining-hall.jpg", alt: "The dining hall with tables set with flowers", caption: "The dining hall" },
+      { image: "/images/gallery/dining-room.jpg", alt: "A colourful dining room with tables and chairs", caption: "Dining room" },
+      { image: "/images/gallery/courtyard-garden.jpg", alt: "The courtyard with raised garden beds and benches", caption: "The courtyard garden" },
+    ],
+  },
+  {
+    title: "Tehillah Future Kidz crèche",
+    intro: "Our children, our pride.",
+    photos: [
+      { image: "/images/gallery/creche-welcome.jpg", alt: "A painted sign reading Welcome to Tehillah Future Kidz, our children, our pride", caption: "Welcome to Tehillah Future Kidz" },
+      { image: "/images/gallery/creche-story-time.jpg", alt: "Children sitting on a mat listening to a teacher, with murals on the wall", caption: "Story time" },
+      { image: "/images/gallery/creche-reading-corner.jpg", alt: "A cosy corner with a couch and a teddy bear mural", caption: "The reading corner" },
+    ],
+  },
+  {
+    title: "In the community",
+    intro: "Our team out in Elsies River and the surrounding areas.",
+    photos: [
+      { image: "/images/gallery/health-day-banner.jpg", alt: "Staff holding a banner reading Your Health is Our Wealth outside Ravensmead Community Day Centre", caption: "Health day at Ravensmead Community Day Centre" },
+      { image: "/images/gallery/health-day-team.jpg", alt: "The Tehillah team with a Your Health is Our Wealth banner in the street", caption: "Your health is our wealth" },
+      { image: "/images/gallery/health-day-screening.jpg", alt: "Care workers screening community members under a gazebo", caption: "Health screening" },
+      { image: "/images/gallery/gbv-march-banners.jpg", alt: "Marchers on a main road holding banners reading Am I next and No to GBV", caption: "Marching against gender-based violence" },
+      { image: "/images/gallery/gbv-march-coffin.jpg", alt: "Marchers carrying a coffin across the road during the march", caption: "Marching against gender-based violence" },
+      { image: "/images/gallery/home-affairs-mobile.jpg", alt: "A Department of Home Affairs mobile office truck", caption: "Home Affairs mobile office" },
+      { image: "/images/gallery/home-affairs-inside.jpg", alt: "Officials working at computers inside the Home Affairs mobile office", caption: "Helping people with IDs and documents" },
+    ],
+  },
+  {
+    title: "Groups, skills and work",
+    intro: "Learning together, and the bread from our bakery.",
+    photos: [
+      { image: "/images/gallery/group-session.jpg", alt: "A facilitator speaking to a large group seated outdoors", caption: "A group session" },
+      { image: "/images/gallery/group-session-2.jpg", alt: "A group session outdoors, seen from the side", caption: "A group session" },
+      { image: "/images/gallery/bakery-kitchen.jpg", alt: "The bakery kitchen with a mixer and oven", caption: "The bakery kitchen" },
+      { image: "/images/gallery/fresh-bread.jpg", alt: "Trays of freshly baked bread rolls", caption: "Fresh bread" },
+    ],
+  },
 ];
 
 export const vision =

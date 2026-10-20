@@ -101,7 +101,12 @@ export default async function HomePage() {
       {/* Gallery */}
       <Section className="pb-12 pt-16 md:pb-16 md:pt-24">
         <div className="flex flex-col gap-9">
-          <h2 className="text-[32px] font-bold leading-[1.15] md:text-[42px]">Life at Tehillah</h2>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <h2 className="text-[32px] font-bold leading-[1.15] md:text-[42px]">Life at Tehillah</h2>
+            <Link href="/photos" className="py-2 text-base font-bold text-brand-dark underline">
+              See more photos
+            </Link>
+          </div>
           <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
             {gallery.map((item) => (
               <figure key={item.caption} className="flex flex-col gap-2.5">
